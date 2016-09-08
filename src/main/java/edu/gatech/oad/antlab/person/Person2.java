@@ -1,4 +1,5 @@
 package edu.gatech.oad.antlab.person;
+import java.util.Random;
 
 /**
  *  A simple class for person 2
@@ -11,7 +12,7 @@ package edu.gatech.oad.antlab.person;
 public class Person2 {
     /** Holds the persons real name */
     private String name;
-	 	/**
+    /**
 	 * The constructor, takes in the persons
 	 * name
 	 * @param pname the person's real name
@@ -19,7 +20,7 @@ public class Person2 {
 	 public Person2(String pname) {
 	   name = pname;
 	 }
-	/**
+	 /**
 	 * This method should take the string
 	 * input and return its characters in
 	 * random order.
@@ -30,8 +31,20 @@ public class Person2 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 2 put your implementation here
-	  return null;
+		String newStr = "";
+        String s1;
+        String s2;
+        Random rand = new Random();
+        int num;
+        int size = input.length();
+        for (int i = 0; i < size; i++) {
+            num = rand.nextInt(input.length());
+            newStr = newStr + input.charAt(num);
+            s1 = input.substring(0, num);
+            s2 = input.substring(num + 1, input.length());
+            input = s1 + s2;
+        }
+        return newStr;
 	}
 	/**
 	 * Return a string rep of this object
